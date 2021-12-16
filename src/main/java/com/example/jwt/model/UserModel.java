@@ -5,7 +5,9 @@ import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.Id;
+import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 
 import lombok.Getter;
@@ -32,6 +34,7 @@ public class UserModel {
 	@Column(name = "creaded_at")
 	private LocalDateTime createdAt;
 	
+	@ManyToMany(fetch = FetchType.EAGER)
 	private List<RoleModel> roles;
 	
 	public UserModel(String name, String email, String password) {
