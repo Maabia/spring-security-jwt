@@ -73,5 +73,7 @@ public class AuthenticationFilter extends UsernamePasswordAuthenticationFilter {
 
         new ObjectMapper().writeValue(response.getOutputStream(), errorInfo);
     }
+    
+    
 	 
 }
